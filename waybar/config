@@ -1,0 +1,105 @@
+//  _       _______  ______  ___    ____ 
+// | |     / /   \ \/ / __ )/   |  / __ \
+// | | /| / / /| |\  / __  / /| | / /_/ /
+// | |/ |/ / ___ |/ / /_/ / ___ |/ _, _/ 
+// |__/|__/_/  |_/_/_____/_/  |_/_/ |_|  
+//
+
+
+{
+    "position": "bottom", 
+    "height": 30, 
+
+    // Choose the order of the modules
+    "modules-left": ["custom/media"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio", "battery", "tray"],
+
+    // Modules configuration
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "format":"{icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+	     "6": "",
+	     "7": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+
+    "clock": {
+        "format": "󰸗 {:%a %d/%m/%Y - %T}",
+    	"interval": 1
+    },
+    
+    "network": {
+        "format-wifi": "󰖩 {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈁 {ifname} {bandwidthUpBits} {bandwidthDownBits}",
+        "format-linked": " (No IP) ",
+        "format-disconnected": "󰖪",
+        "interval": 1
+    },
+    
+    "cpu": {
+        "format": "{usage}% ",
+        "interval": 1
+    },
+    
+    "memory": {
+        "format": "{percentage}% 󰍛",
+        "interval": 1
+    },
+    
+        "pulseaudio": {
+            "format": "{icon} {volume}%",
+            "format-bluetooth": "{volume}% {icon} {format_source}",
+            "format-bluetooth-muted": "ﱝ {icon} {format_source}",
+            "format-muted": "ﱝ",
+            "format-source": "{volume}% ",
+            "format-source-muted": "",
+            "format-icons": {
+                "headphones": "",
+                "handsfree": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["", "", ""]
+            },
+            "on-click": "pavucontrol"
+        },
+    
+    "battery": {
+        "bat": "BAT1",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂅",
+        "format-icons": ["󰁹", "󰂂", "󰂁", "󰂀", "󰁿", "󰁾", "󰁽", "󰁼", "󰁻", "󰁺"],
+        "tooltip-format": "{time}"
+    },
+    
+    
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    
+    "custom/media": {
+        "exec": "/home/_light_/Scriptydoos/update-name.sh",
+        "interval": 5,
+        "format": "{} 🎵",
+        "format-alt": "Paused 🎵",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous"
+    },
+}
