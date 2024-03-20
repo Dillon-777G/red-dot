@@ -18,6 +18,7 @@ window#waybar.hidden {
     background-color: black;
     border: 2px solid #c9a0dc;
     border-radius: 10px;
+    min-width: 200px;
 }
 
 #workspaces button {
@@ -50,40 +51,16 @@ window#waybar.hidden {
 #memory,
 #network,
 #pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
+#custom-media {
+    min-width: 80px;
+    background-color: #c9a0dc;
 }
 
 #clock {
     border-radius: 10px;
     background-color: #c9a0dc;
     color: #000000;
-}
-
-#battery {
-    background-color: #c9a0dc;
-    border-radius: 0 10px 10px 0;
-    color: #000000;
-}
-
-#battery.charging {
-    color: #000000;
-    background-color: #0bda51;
-}
-
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    min-width: 400px; 
 }
 
 @keyframes blink {
@@ -108,8 +85,10 @@ label:focus {
 }
 
 #network {
+    min-width: 300px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     background-color: #c9a0dc;
-    border-radius: 10px 0 0 10px;
     color: #000000;
 }
 
@@ -118,6 +97,8 @@ label:focus {
 }
 
 #pulseaudio {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     background-color: #c9a0dc;
     color: #000000;
 }
@@ -125,7 +106,7 @@ label:focus {
 #custom-media {
     background-color: #c9a0dc;
     color: #2a5c45;
-    min-width: 100px;
+    min-width: 400px;
 }
 
 #custom-media.custom-spotify {
@@ -136,28 +117,3 @@ label:focus {
     background-color: #c9a0dc;
 }
 
-#tray {
-    background-color: transparent;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}

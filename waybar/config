@@ -11,31 +11,26 @@
     "height": 30, 
 
     // Choose the order of the modules
-    "modules-left": ["custom/media"],
-    "modules-center": ["clock"],
-    "modules-right": ["network", "cpu", "memory", "pulseaudio", "battery", "tray"],
+    "modules-left": ["clock"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio",  "tray"],
+    "modules-center": ["hyprland/workspaces"],
 
     // Modules configuration
-     "sway/workspaces": {
-         "disable-scroll": true,
-         "format":"{icon}",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
-	     "6": "",
-	     "7": "",
-             "urgent": "",
-             "focused": "",
-             "default": ""
-         }
-     },
-
+    "hyprland/workspaces": {
+        "format": "{name}: {icon}",
+        "format-icons": {
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": "",
+                "active": "",
+                "default": ""
+        }
+    }, 
     "clock": {
         "format": "󰸗 {:%a %d/%m/%Y - %T}",
-    	"interval": 1
+        "interval": 1
     },
     
     "network": {
@@ -57,49 +52,11 @@
     },
     
         "pulseaudio": {
-            "format": "{icon} {volume}%",
-            "format-bluetooth": "{volume}% {icon} {format_source}",
-            "format-bluetooth-muted": "ﱝ {icon} {format_source}",
-            "format-muted": "ﱝ",
-            "format-source": "{volume}% ",
-            "format-source-muted": "",
-            "format-icons": {
-                "headphones": "",
-                "handsfree": "",
-                "headset": "",
-                "phone": "",
-                "portable": "",
-                "car": "",
-                "default": ["", "", ""]
-            },
-            "on-click": "pavucontrol"
+            "format": "{icon} \uf028 {volume}%",
         },
-    
-    "battery": {
-        "bat": "BAT1",
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰂅",
-        "format-icons": ["󰁹", "󰂂", "󰂁", "󰂀", "󰁿", "󰁾", "󰁽", "󰁼", "󰁻", "󰁺"],
-        "tooltip-format": "{time}"
-    },
-    
     
     "tray": {
         // "icon-size": 21,
         "spacing": 10
-    },
-    
-    "custom/media": {
-        "exec": "/home/_light_/Scriptydoos/update-name.sh",
-        "interval": 5,
-        "format": "{} 🎵",
-        "format-alt": "Paused 🎵",
-        "on-click": "playerctl play-pause",
-        "on-click-right": "playerctl next",
-        "on-click-middle": "playerctl previous"
     },
 }
